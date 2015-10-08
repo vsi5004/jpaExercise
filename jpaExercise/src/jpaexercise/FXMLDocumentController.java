@@ -11,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -29,7 +31,14 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        EntityManagerFactory emf;
+        emf = Persistence.createEntityManagerFactory("jpaexercisepu");
+        
+        Person dude = new Person();
+        dude.setFirstName("Ivan");
+        
+        PersonJpaController jpaPerson = new PersonJpaController(emf);
+        jpaPerson.create(dude);
     }    
     
 }
