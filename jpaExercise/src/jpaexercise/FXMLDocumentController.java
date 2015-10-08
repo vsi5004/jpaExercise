@@ -32,7 +32,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         EntityManagerFactory emf;
-        emf = Persistence.createEntityManagerFactory("jpaexercisepu");
+        emf = Persistence.createEntityManagerFactory("jpaexercisePU");
         
         Person dude = new Person();
         dude.setFirstName("Ivan");
